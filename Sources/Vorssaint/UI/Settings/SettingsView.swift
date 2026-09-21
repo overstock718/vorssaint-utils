@@ -185,12 +185,12 @@ struct SettingsView: View {
 
     @ViewBuilder
     private func searchResultRows(_ searchResults: SearchResultsSnapshot) -> some View {
-        ForEach(searchResults.groups) { group in
+        ForEach(searchResults.groups, id: \.parentSuggestion.id) { group in
             searchPageRow(group, searchResults: searchResults)
             ForEach(group.suggestions) { suggestion in
                 searchSuggestionRow(suggestion, searchResults: searchResults)
-            }
-        }
+    }
+}
     }
 
     private func searchPageRow(_ group: SettingsSearchGroup,
