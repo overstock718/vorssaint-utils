@@ -180,7 +180,7 @@ struct SettingsView: View {
                     }
                 }
             }
-        }
+        }   
     }
 
     @ViewBuilder
@@ -189,8 +189,8 @@ struct SettingsView: View {
             searchPageRow(group, searchResults: searchResults)
             ForEach(group.suggestions) { suggestion in
                 searchSuggestionRow(suggestion, searchResults: searchResults)
-    }
-}
+            }
+        }
     }
 
     private func searchPageRow(_ group: SettingsSearchGroup,
